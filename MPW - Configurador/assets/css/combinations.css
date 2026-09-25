@@ -1,0 +1,87 @@
+.mpwcfg-configurator--combinations{background:radial-gradient(ellipse at top,#22103a 0%,var(--mpwcfg-bg,#160a24) 58%,#0b0616 100%);color:var(--mpwcfg-text,#f2eef5);padding:34px 24px 48px;border-radius:16px;max-width:760px;margin:0 auto}
+.mpwcfg-combo-hero h2{margin:4px 0 5px;font-size:28px;color:var(--mpwcfg-text,#f2eef5)}.mpwcfg-combo-hero p{margin:0 0 24px;color:var(--mpwcfg-text-muted,#a79ab8);font-size:14px}.mpwcfg-combo-eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#36d6cf;font-weight:600}
+.mpwcfg-combo-progress{display:flex;gap:6px;margin-bottom:8px}.mpwcfg-combo-progress span{height:3px;flex:1;background:#2a1943;border-radius:3px}.mpwcfg-combo-progress span.done,.mpwcfg-combo-progress span.active{background:linear-gradient(90deg,#ff2e7e,#36d6cf)}
+.mpwcfg-combo-step{padding:22px 0;border-top:1px solid rgba(255,255,255,.08)}.mpwcfg-combo-step-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}.mpwcfg-combo-step-head>span{display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border-radius:8px;background:#ff2e7e;color:#fff;font:600 11px ui-monospace}.mpwcfg-combo-step-head h3{margin:0;font-size:15px;color:#f2eef5}
+.mpwcfg-combo-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.mpwcfg-combo-option-btn{font:500 14px inherit;text-align:left;color:#f2eef5;background:#1f1130;border:1px solid #33204f;border-radius:10px;padding:14px 16px;cursor:pointer;min-height:52px}.mpwcfg-combo-option-btn:hover{border-color:#ff2e7e}.mpwcfg-combo-option-btn.is-selected{border-color:#ff2e7e;background:linear-gradient(135deg,rgba(255,46,126,.18),rgba(54,214,207,.12));box-shadow:0 0 0 1px #ff2e7e}.mpwcfg-combo-option-btn span{display:block}.mpwcfg-combo-option-btn small{display:block;margin-top:3px;color:#a79ab8;font:11px ui-monospace}
+.mpwcfg-combo-summary{margin-top:8px;padding:20px;border:1px solid #33204f;border-radius:14px;background:#1f1130}.mpwcfg-combo-summary-title{font-size:14px;font-weight:600;margin-bottom:14px}.mpwcfg-combo-summary-lines>div{display:flex;justify-content:space-between;gap:18px;padding:5px 0;color:#a79ab8;font-size:13px}.mpwcfg-combo-summary-lines b{color:#f2eef5;font-weight:600;text-align:right}.mpwcfg-combo-total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid #33204f;margin-top:12px;padding-top:15px}.mpwcfg-combo-total span{color:#a79ab8;font-size:13px}.mpwcfg-combo-total strong{color:#4ade80;font:600 28px ui-monospace}.mpwcfg-combo-tax{display:block;text-align:right;color:#a79ab8;margin-top:2px}.mpwcfg-configurator--combinations .mpwcfg-add{background:#E5147E;color:#ffffff;border:0;width:100%;min-height:52px;border-radius:10px;font-weight:700;cursor:pointer}.mpwcfg-configurator--combinations .mpwcfg-contact{width:100%;min-height:52px;border:1px solid #f2eef5;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#f2eef5;text-decoration:none}.mpwcfg-configurator--combinations .mpwcfg-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.mpwcfg-configurator--combinations .mpwcfg-continue{display:block;text-align:center;color:#a79ab8;text-decoration:none;margin-top:15px;font-size:12px}.mpwcfg-configurator--combinations .mpwcfg-trust{display:flex;flex-wrap:wrap;gap:10px 18px;padding-top:18px;margin-top:18px;border-top:1px solid rgba(255,255,255,.08);list-style:none}.mpwcfg-configurator--combinations .mpwcfg-trust__item{display:flex;gap:6px;color:#a79ab8;font-size:12px}.mpwcfg-configurator--combinations .mpwcfg-trust__check{color:#4ade80}.mpwcfg-combo-feedback{text-align:center;color:#a79ab8;font-size:12px;margin-top:12px}@media(max-width:560px){.mpwcfg-configurator--combinations{padding:24px 16px}.mpwcfg-combo-options,.mpwcfg-configurator--combinations .mpwcfg-actions{grid-template-columns:1fr}.mpwcfg-combo-hero h2{font-size:24px}}
+
+/* ============================================================
+   v1.9.1 — diseño, corrección y acciones del modo combinaciones
+   ============================================================ */
+.mpwcfg-configurator--combinations .mpwcfg-combo-upload {
+    margin: 0 0 22px;
+    padding: 16px;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 12px;
+    background: rgba(31,17,48,.72);
+}
+.mpwcfg-combo-upload__head { display:flex; flex-direction:column; gap:4px; margin-bottom:12px; }
+.mpwcfg-combo-upload__head strong { font-size:13px; color:#f2eef5; }
+.mpwcfg-combo-upload__head strong span { color:#a79ab8; font-weight:400; }
+.mpwcfg-combo-upload__head small { color:#a79ab8; font-size:11.5px; line-height:1.5; }
+.mpwcfg-configurator--combinations .mpwcfg-upload-name { margin:0; font-size:11px; }
+.mpwcfg-combo-upload__file { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:9px; padding:8px 10px; border-radius:8px; background:#1f1130; border:1px solid #33204f; }
+.mpwcfg-combo-upload__file-name { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:#4ade80; font:11px ui-monospace,monospace; }
+.mpwcfg-combo-upload__remove { border:0; background:none; color:#a79ab8; cursor:pointer; font-size:11px; }
+.mpwcfg-combo-upload__remove:hover { color:#ff2e7e; }
+.mpwcfg-configurator--combinations .mpwcfg-template-link { margin-top:10px; font-size:11px; }
+.mpwcfg-combo-step-head { justify-content:space-between; }
+.mpwcfg-combo-step-head > div { display:flex; align-items:center; gap:10px; }
+.mpwcfg-combo-step-current { color:#a79ab8; font-size:11px; font-weight:500; }
+.mpwcfg-combo-summary-line { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:9px 0; border-bottom:1px solid rgba(255,255,255,.07); }
+.mpwcfg-combo-summary-line > div { display:flex; justify-content:space-between; gap:16px; flex:1; color:#a79ab8; font-size:13px; }
+.mpwcfg-combo-summary-line b { color:#f2eef5; font-weight:600; text-align:right; }
+.mpwcfg-combo-edit { flex:0 0 auto; border:0; background:none; color:#36d6cf; padding:3px 0; cursor:pointer; font-size:11px; text-decoration:underline; }
+.mpwcfg-combo-edit:hover { color:#fff; }
+.mpwcfg-combo-summary-file { display:flex; justify-content:space-between; gap:16px; padding:10px 0 4px; color:#a79ab8; font-size:12px; }
+.mpwcfg-combo-summary-file b { color:#4ade80; font-weight:600; text-align:right; word-break:break-word; }
+.mpwcfg-combo-feedback { min-height:18px; margin:10px 0 0; }
+@media(max-width:560px){
+  .mpwcfg-combo-summary-line > div { flex-direction:column; gap:2px; }
+  .mpwcfg-combo-summary-file { flex-direction:column; gap:3px; }
+}
+
+/* v1.9.4 — flujo permanente: las selecciones no desaparecen */
+.mpwcfg-configurator--combinations .mpwcfg-combo-step { display:block; }
+.mpwcfg-configurator--combinations .mpwcfg-combo-step:not(.is-enabled) { opacity:.48; }
+.mpwcfg-configurator--combinations .mpwcfg-combo-option-btn:disabled { cursor:not-allowed; opacity:.55; }
+.mpwcfg-configurator--combinations .mpwcfg-combo-option-btn.is-selected { opacity:1; }
+.mpwcfg-configurator--combinations .mpwcfg-combo-summary { display:block; }
+.mpwcfg-configurator--combinations .mpwcfg-combo-summary-line:last-child { border-bottom:0; }
+.mpwcfg-configurator--combinations .mpwcfg-combo-summary-file { border-bottom:1px solid rgba(255,255,255,.07); }
+.mpwcfg-configurator--combinations .mpwcfg-combo-add:disabled { opacity:.45; }
+
+/* Per-format combination editor */
+.mpwcfg-combo-profile{background:#fff;border:1px solid #ddd1e8;border-radius:12px;margin:0 0 18px;overflow:hidden}
+.mpwcfg-combo-profile__head{display:flex;align-items:center;gap:12px;padding:14px 16px;background:#fbf9fd;border-bottom:1px solid #e7ddef}
+.mpwcfg-combo-letter{width:26px;height:26px;border:1px solid #d9cce4;border-radius:7px;display:flex;align-items:center;justify-content:center;font-weight:600;color:#5b3a78;font-size:12px}
+.mpwcfg-combo-profile__head strong{font-size:15px;flex:1}
+.mpwcfg-combo-profile__chevron{color:#806b95}
+.mpwcfg-combo-profile__body{padding:18px 16px 20px}
+.mpwcfg-combo-profile__label{font-size:12px;font-weight:600;color:#806b95;margin:0 0 8px}
+.mpwcfg-combo-tier-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.mpwcfg-combo-tier-chip{display:inline-flex;align-items:center;gap:6px;background:#f7f0fa;border:1px solid #e1d3ea;border-radius:18px;padding:3px 8px 3px 10px}
+.mpwcfg-combo-tier-chip input{border:0;background:transparent;width:90px;font-size:13px;padding:4px 0;color:#33223f}
+.mpwcfg-combo-tier-chip button,.mpwcfg-combo-grid-row button{border:0;background:none;color:#d44b72;cursor:pointer;font-size:16px}
+.mpwcfg-combo-profile-grid{width:100%}
+.mpwcfg-combo-grid-head,.mpwcfg-combo-grid-row{display:grid;grid-template-columns:1.1fr 1.1fr 1fr 28px;gap:12px;align-items:center}
+.mpwcfg-combo-grid-head{padding:0 8px 6px;color:#806b95;font-size:11px;font-weight:600;border-bottom:1px solid #dfd1e8}
+.mpwcfg-combo-grid-row{padding:7px 8px;border-bottom:1px solid #eadff0}
+.mpwcfg-combo-grid-row input{width:100%;box-sizing:border-box;background:#f7f0fa;border:1px solid #ddcfe6;border-radius:6px;padding:7px 10px;color:#302039}
+.mpwcfg-combo-grid-row input[readonly]{color:#5b4669}
+.mpwcfg-combo-tier-table{margin-bottom:18px}
+.mpwcfg-combo-tier-table__title{font-size:12px;font-weight:600;color:#5d4271;margin-bottom:6px}
+
+
+
+/* 1.10.14: el enlace Ir al carrito permanece oculto hasta agregar el producto. */
+.mpwcfg-cart-link[hidden]{display:none !important;}
+
+
+
+/* 1.10.18: enlace único posterior al agregado. Solo aparece después de agregar. */
+.mpwcfg-after-add-links { display:flex; align-items:center; justify-content:center; width:100%; margin-top:14px; }
+.mpwcfg-after-add-links .mpwcfg-cart-link[hidden] { display:none !important; }
+.mpwcfg-after-add-links .mpwcfg-cart-link { display:inline-flex; align-items:center; justify-content:center; margin:0; padding:8px 0; color:var(--mpwcfg-success); font-family:var(--mpwcfg-font-mono); font-size:14px; font-weight:600; line-height:1.2; text-decoration:none; white-space:nowrap; }
+.mpwcfg-after-add-links .mpwcfg-cart-link:hover { color:var(--mpwcfg-success); text-decoration:underline; }
+.mpwcfg-add.is-loading, .mpwcfg-add.is-done { opacity:1 !important; background:#E5147E !important; color:var(--mpwcfg-accent-ink) !important; }

@@ -1,0 +1,889 @@
+/**
+ * MPW · Configurador — estilos del panel de administración.
+ * Constructor de pasos dentro de la pestaña "Configurador" del producto.
+ * Identidad visual MPW (berenjena, fucsia, menta).
+ */
+
+.mpwcfg-panel {
+	--mpwcfg-a-bg: #fbf7fb;
+	--mpwcfg-a-surface: #ffffff;
+	--mpwcfg-a-ink: #1c1320;
+	--mpwcfg-a-muted: #6b5a78;
+	--mpwcfg-a-line: #e7dcec;
+	--mpwcfg-a-eggplant: #190b1f;
+	--mpwcfg-a-fucsia: #ff2e7e;
+	--mpwcfg-a-mint: #1fb6ae;
+	--mpwcfg-a-gold: #f5b62d;
+	--mpwcfg-a-radius: 10px;
+}
+
+/* ---- Cabecera / intro ---- */
+.mpwcfg-panel .mpwcfg-panel__head { padding: 14px 0 4px; }
+.mpwcfg-panel .mpwcfg-panel__intro {
+	margin: 0;
+	padding: 12px 14px;
+	background: var(--mpwcfg-a-bg);
+	border: 1px solid var(--mpwcfg-a-line);
+	border-left: 3px solid var(--mpwcfg-a-fucsia);
+	border-radius: var(--mpwcfg-a-radius);
+	color: var(--mpwcfg-a-muted);
+	font-style: normal;
+}
+
+/* ---- Bloque de ajustes globales ---- */
+.mpwcfg-panel .mpwcfg-globals { padding: 6px 12px 0; }
+
+.mpwcfg-panel .mpwcfg-grid2 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0;
+}
+@media (max-width: 782px) {
+	.mpwcfg-panel .mpwcfg-grid2 { grid-template-columns: 1fr; }
+}
+
+.mpwcfg-panel .mpwcfg-field {
+	display: block;
+	margin: 0 0 12px;
+}
+.mpwcfg-panel .mpwcfg-field > span {
+	display: block;
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--mpwcfg-a-muted);
+	margin-bottom: 4px;
+}
+.mpwcfg-panel .mpwcfg-field input[type="text"],
+.mpwcfg-panel .mpwcfg-field input[type="url"],
+.mpwcfg-panel .mpwcfg-field input[type="number"],
+.mpwcfg-panel .mpwcfg-field textarea {
+	width: 100%;
+	border: 1px solid var(--mpwcfg-a-line);
+	border-radius: 8px;
+	padding: 7px 10px;
+	background: #fff;
+}
+.mpwcfg-panel .mpwcfg-field input:focus,
+.mpwcfg-panel .mpwcfg-field textarea:focus {
+	border-color: var(--mpwcfg-a-mint);
+	box-shadow: 0 0 0 1px var(--mpwcfg-a-mint);
+}
+
+/* Casillas y radios */
+.mpwcfg-panel .mpwcfg-check,
+.mpwcfg-panel .mpwcfg-radio {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	font-size: 13px;
+	color: var(--mpwcfg-a-ink);
+	cursor: pointer;
+}
+.mpwcfg-panel .mpwcfg-check { font-weight: 600; }
+.mpwcfg-panel .mpwcfg-radio { margin-right: 18px; }
+
+/* Subgrupos (resumen, confianza) */
+.mpwcfg-panel .mpwcfg-subgroup {
+	margin: 4px 0 14px;
+	padding: 12px 14px;
+	border: 1px solid var(--mpwcfg-a-line);
+	border-radius: var(--mpwcfg-a-radius);
+	background: var(--mpwcfg-a-bg);
+}
+.mpwcfg-panel .mpwcfg-subgroup > legend {
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: var(--mpwcfg-a-fucsia);
+	padding: 0 6px;
+}
+.mpwcfg-panel .mpwcfg-trust-input {
+	width: 100%;
+	margin-bottom: 8px;
+	border: 1px solid var(--mpwcfg-a-line);
+	border-radius: 8px;
+	padding: 7px 10px;
+	background: #fff;
+}
+.mpwcfg-panel .mpwcfg-trust-input:last-child { margin-bottom: 0; }
+.mpwcfg-panel .mpwcfg-trust-input:focus { border-color: var(--mpwcfg-a-mint); box-shadow: 0 0 0 1px var(--mpwcfg-a-mint); }
+
+/* ---- Lista de pasos ---- */
+.mpwcfg-panel .mpwcfg-steps {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin: 8px 0 4px;
+	padding: 0 12px;
+}
+
+.mpwcfg-panel .mpwcfg-step {
+	background: var(--mpwcfg-a-surface);
+	border: 1px solid var(--mpwcfg-a-line);
+	border-radius: var(--mpwcfg-a-radius);
+	box-shadow: 0 1px 2px rgba(25, 11, 31, 0.04);
+	overflow: hidden;
+}
+
+/* Barra superior del paso */
+.mpwcfg-panel .mpwcfg-step__bar {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 10px 12px;
+	background: linear-gradient(180deg, #fdfbfe 0%, #f7f1f9 100%);
+	border-bottom: 1px solid var(--mpwcfg-a-line);
+}
+.mpwcfg-panel .mpwcfg-step__drag { cursor: grab; color: #b7a7c2; line-height: 1; }
+.mpwcfg-panel .mpwcfg-step__drag:active { cursor: grabbing; }
+
+.mpwcfg-panel .mpwcfg-step__badge {
+	flex: 0 0 auto;
+	font: 600 11px/1 -apple-system, "Segoe UI", sans-serif;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	padding: 5px 9px;
+	border-radius: 999px;
+	color: #fff;
+	background: var(--mpwcfg-a-muted);
+}
+.mpwcfg-panel .mpwcfg-step__badge--swatch   { background: var(--mpwcfg-a-fucsia); }
+.mpwcfg-panel .mpwcfg-step__badge--quantity { background: var(--mpwcfg-a-mint); }
+.mpwcfg-panel .mpwcfg-step__badge--upload   { background: var(--mpwcfg-a-eggplant); }
+
+.mpwcfg-panel .mpwcfg-step__label {
+	flex: 1 1 auto;
+	min-width: 0;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 7px 10px !important;
+	border: 1px solid var(--mpwcfg-a-line) !important;
+	border-radius: 8px !important;
+}
+.mpwcfg-panel .mpwcfg-step__label:focus {
+	border-color: var(--mpwcfg-a-fucsia) !important;
+	box-shadow: 0 0 0 1px var(--mpwcfg-a-fucsia) !important;
+}
+
+.mpwcfg-panel .mpwcfg-step__duplicate,
+.mpwcfg-panel .mpwcfg-step__remove {
+	flex: 0 0 auto;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	border: 1px solid var(--mpwcfg-a-line);
+	border-radius: 8px;
+	background: #fff;
+	cursor: pointer;
+	transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.mpwcfg-panel .mpwcfg-step__duplicate { color: var(--mpwcfg-a-mint); }
+.mpwcfg-panel .mpwcfg-step__duplicate:hover {
+	background: var(--mpwcfg-a-mint);
+	border-color: var(--mpwcfg-a-mint);
+	color: #fff;
+}
+.mpwcfg-panel .mpwcfg-step__remove { color: #c0506e; }
+.mpwcfg-panel .mpwcfg-step__remove:hover {
+	background: var(--mpwcfg-a-fucsia);
+	border-color: var(--mpwcfg-a-fucsia);
+	color: #fff;
+}
+
+/* Cuerpo del paso */
+.mpwcfg-panel .mpwcfg-step__body { padding: 12px; }
+.mpwcfg-panel .mpwcfg-step__body .mpwcfg-field { margin-bottom: 10px; }
+
+/* ---- Opciones dentro de un paso ---- */
+.mpwcfg-panel .mpwcfg-options {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin-bottom: 10px;
+}
+
+.mpwcfg-panel .mpwcfg-option {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px;
+	background: var(--mpwcfg-a-bg);
+	border: 1px solid var(--mpwcfg-a-line);
+	border-radius: 8px;
+}
+
+.mpwcfg-panel .mpwcfg-option__drag { cursor: grab; color: #c4b6cf; flex: 0 0 auto; }
+.mpwcfg-panel .mpwcfg-option__drag:active { cursor: grabbing; }
+
+/* Selector visual de color: swatch + hex de respaldo */
+.mpwcfg-panel .mpwcfg-option__swatchwrap {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	flex: 0 0 auto;
+}
+.mpwcfg-panel .mpwcfg-option__chip-picker {
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	border: 1px solid var(--mpwcfg-a-line);
+	border-radius: 7px;
+	background: #fff;
+	cursor: pointer;
+}
+.mpwcfg-panel .mpwcfg-option__chip {
+	width: 78px;
+	flex: 0 0 78px;
+}
+
+/* Imagen miniatura opcional del material */
+.mpwcfg-panel .mpwcfg-option__thumbwrap {
+	position: relative;
+	flex: 0 0 auto;
+	display: inline-flex;
+	align-items: center;
+}
+.mpwcfg-panel .mpwcfg-option__thumb-btn {
+	width: 30px;
+	height: 30px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px dashed var(--mpwcfg-a-line);
+	border-radius: 7px;
+	background-color: #fff;
+	background-size: cover;
+	background-position: center;
+	color: #b7a7c2;
+	cursor: pointer;
+	padding: 0;
+}
+.mpwcfg-panel .mpwcfg-option__thumb-btn.has-image { border-style: solid; border-color: var(--mpwcfg-a-mint); }
+.mpwcfg-panel .mpwcfg-option__thumb-btn .dashicons { font-size: 16px; width: 16px; height: 16px; }
+.mpwcfg-panel .mpwcfg-option__thumb-remove {
+	position: absolute;
+	top: -6px;
+	right: -6px;
+	width: 16px;
+	height: 16px;
+	line-height: 14px;
+	font-size: 12px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid var(--mpwcfg-a-line);
+	border-radius: 50%;
+	background: #fff;
+	color: #b06;
+	cursor: pointer;
+	padding: 0;
+}
+
+.mpwcfg-panel .mpwcfg-option__label { flex: 2 1 0; min-width: 80px; }
+.mpwcfg-panel .mpwcfg-option__sub { flex: 2 1 0; min-width: 80px; }
+.mpwcfg-panel .mpwcfg-option__price,
+.mpwcfg-panel .mpwcfg-option__qty,
+.mpwcfg-panel .mpwcfg-option__mult,
+.mpwcfg-panel .mpwcfg-option__badge {
+	flex: 0 0 84px;
+	width: 84px;
+}
+
+.mpwcfg-panel .mpwcfg-option input[type="text"],
+.mpwcfg-panel .mpwcfg-option input[type="number"] {
+	border: 1px solid var(--mpwcfg-a-line);
+	border-radius: 7px;
+	padding: 6px 9px;
+	background: #fff;
+}
+.mpwcfg-panel .mpwcfg-option input:focus {
+	border-color: var(--mpwcfg-a-fucsia);
+	box-shadow: 0 0 0 1px var(--mpwcfg-a-fucsia);
+}
+.mpwcfg-panel .mpwcfg-option__badge {
+	color: #0c7a4f;
+	font-weight: 600;
+	text-align: center;
+}
+
+/* Estrella "por defecto" */
+.mpwcfg-panel .mpwcfg-option__default {
+	flex: 0 0 auto;
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+	margin: 0;
+}
+.mpwcfg-panel .mpwcfg-option__default input {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+.mpwcfg-panel .mpwcfg-option__default .dashicons {
+	color: #d8cae0;
+	transition: color 0.15s, transform 0.15s;
+}
+.mpwcfg-panel .mpwcfg-option__default:hover .dashicons { color: var(--mpwcfg-a-gold); }
+.mpwcfg-panel .mpwcfg-option__default input:checked + .dashicons {
+	color: var(--mpwcfg-a-gold);
+	transform: scale(1.12);
+}
+
+/* Quitar opción */
+.mpwcfg-panel .mpwcfg-option__remove {
+	flex: 0 0 auto;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	border: 1px solid var(--mpwcfg-a-line);
+	border-radius: 7px;
+	background: #fff;
+	color: #b06;
+	cursor: pointer;
+	transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.mpwcfg-panel .mpwcfg-option__remove:hover {
+	background: #ffe6ef;
+	border-color: var(--mpwcfg-a-fucsia);
+	color: var(--mpwcfg-a-fucsia);
+}
+
+/* ---- Botones de acción ---- */
+.mpwcfg-panel .mpwcfg-add-option { margin-top: 2px !important; }
+
+.mpwcfg-panel .mpwcfg-steps__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	padding: 8px 12px 4px;
+	margin: 0;
+}
+.mpwcfg-panel .mpwcfg-add-step { border-color: var(--mpwcfg-a-line) !important; }
+.mpwcfg-panel .mpwcfg-add-step[data-type="swatch"]:hover   { border-color: var(--mpwcfg-a-fucsia) !important; color: var(--mpwcfg-a-fucsia) !important; }
+.mpwcfg-panel .mpwcfg-add-step[data-type="quantity"]:hover { border-color: var(--mpwcfg-a-mint) !important; color: var(--mpwcfg-a-mint) !important; }
+.mpwcfg-panel .mpwcfg-add-step[data-type="upload"]:hover   { border-color: var(--mpwcfg-a-eggplant) !important; color: var(--mpwcfg-a-eggplant) !important; }
+
+/* ---- Estados jQuery UI Sortable ---- */
+.mpwcfg-panel .ui-sortable-helper { box-shadow: 0 8px 24px rgba(25, 11, 31, 0.18); }
+.mpwcfg-panel .ui-sortable-placeholder {
+	visibility: visible !important;
+	background: repeating-linear-gradient(45deg, #f3eaf6, #f3eaf6 8px, #ece0f0 8px, #ece0f0 16px);
+	border: 1px dashed var(--mpwcfg-a-fucsia) !important;
+	border-radius: var(--mpwcfg-a-radius);
+}
+
+/* ---- Responsivo dentro del metabox ---- */
+@media (max-width: 782px) {
+	.mpwcfg-panel .mpwcfg-option { flex-wrap: wrap; }
+	.mpwcfg-panel .mpwcfg-option__label,
+	.mpwcfg-panel .mpwcfg-option__sub { flex: 1 1 100%; }
+	.mpwcfg-panel .mpwcfg-option__price,
+	.mpwcfg-panel .mpwcfg-option__qty,
+	.mpwcfg-panel .mpwcfg-option__mult,
+	.mpwcfg-panel .mpwcfg-option__badge { flex: 1 1 auto; width: auto; }
+}
+
+/* ==========================================================================
+   Configurator Machine 1.8 — limpieza del editor
+   ========================================================================== */
+.mpwcfg-panel .mpwcfg-subgroup > legend {
+	display: block;
+	float: none;
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	margin: 0 0 12px;
+	padding: 0;
+	line-height: 1.35;
+	white-space: normal;
+	overflow-wrap: anywhere;
+}
+
+.mpwcfg-panel .mpwcfg-option {
+	display: grid;
+	grid-template-columns: 24px minmax(0, 2.2fr) minmax(150px, 1fr) 110px 34px 34px;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 10px;
+}
+
+.mpwcfg-panel .mpwcfg-option[data-type="quantity"] {
+	grid-template-columns: 24px minmax(0, 2fr) 90px 90px 110px 34px 34px;
+}
+
+.mpwcfg-panel .mpwcfg-option__label,
+.mpwcfg-panel .mpwcfg-option__sub,
+.mpwcfg-panel .mpwcfg-option__price,
+.mpwcfg-panel .mpwcfg-option__qty,
+.mpwcfg-panel .mpwcfg-option__mult,
+.mpwcfg-panel .mpwcfg-option__badge {
+	width: 100%;
+	min-width: 0;
+	flex: none;
+}
+
+.mpwcfg-panel .mpwcfg-option input[type="text"],
+.mpwcfg-panel .mpwcfg-option input[type="number"] {
+	width: 100%;
+	min-width: 0;
+}
+
+.mpwcfg-panel .mpwcfg-option__default,
+.mpwcfg-panel .mpwcfg-option__remove {
+	justify-self: center;
+}
+
+.mpwcfg-panel .mpwcfg-option__drag {
+	width: 24px;
+	text-align: center;
+}
+
+.mpwcfg-panel .mpwcfg-options {
+	width: 100%;
+}
+
+@media (max-width: 1100px) {
+	.mpwcfg-panel .mpwcfg-option,
+	.mpwcfg-panel .mpwcfg-option[data-type="quantity"] {
+		grid-template-columns: 24px minmax(0, 1.8fr) minmax(120px, 1fr) 95px 34px 34px;
+	}
+	.mpwcfg-panel .mpwcfg-option[data-type="quantity"] {
+		grid-template-columns: 24px minmax(0, 1.8fr) 85px 85px 95px 34px 34px;
+	}
+}
+
+@media (max-width: 782px) {
+	.mpwcfg-panel .mpwcfg-option,
+	.mpwcfg-panel .mpwcfg-option[data-type="quantity"] {
+		grid-template-columns: 24px 1fr 34px 34px;
+	}
+	.mpwcfg-panel .mpwcfg-option__label,
+	.mpwcfg-panel .mpwcfg-option__sub,
+	.mpwcfg-panel .mpwcfg-option__price,
+	.mpwcfg-panel .mpwcfg-option__qty,
+	.mpwcfg-panel .mpwcfg-option__mult,
+	.mpwcfg-panel .mpwcfg-option__badge {
+		grid-column: 2 / -1;
+	}
+	.mpwcfg-panel .mpwcfg-option__default {
+		grid-column: 3;
+		grid-row: 1;
+	}
+	.mpwcfg-panel .mpwcfg-option__remove {
+		grid-column: 4;
+		grid-row: 1;
+	}
+}
+
+/* ==========================================================================
+   v1.9.0 · Selector de modo + constructor de combinaciones
+   ========================================================================== */
+.mpwcfg-mode-switch{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 12px 8px}
+.mpwcfg-mode-switch label{position:relative;display:flex;flex-direction:column;gap:4px;padding:16px 18px;border:1px solid var(--mpwcfg-a-line);border-radius:10px;background:#fff;cursor:pointer;transition:.15s}
+.mpwcfg-mode-switch label.is-active{border-color:var(--mpwcfg-a-fucsia);box-shadow:0 0 0 1px var(--mpwcfg-a-fucsia);background:#fffafd}
+.mpwcfg-mode-switch input{position:absolute;top:17px;right:17px}
+.mpwcfg-mode-switch span{font-size:14px;font-weight:700;color:var(--mpwcfg-a-ink);padding-right:24px}
+.mpwcfg-mode-switch span b{font-size:9px;color:#fff;background:var(--mpwcfg-a-fucsia);padding:3px 6px;border-radius:999px;margin-left:5px}
+.mpwcfg-mode-switch small{font-size:12px;color:var(--mpwcfg-a-muted)}
+.mpwcfg-mode-panel__title{margin:10px 12px 0;padding:12px 14px;background:#f6eff9;border:1px solid var(--mpwcfg-a-line);border-radius:10px;color:var(--mpwcfg-a-muted)}
+.mpwcfg-mode-panel__title strong{display:block;color:var(--mpwcfg-a-ink);margin-bottom:3px}
+.mpwcfg-mode-panel__title span{font-size:12px}
+.mpwcfg-combinations{padding:12px}
+.mpwcfg-combinations__intro{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 16px;background:#f6eff9;border:1px solid var(--mpwcfg-a-line);border-radius:10px;margin-bottom:18px}
+.mpwcfg-combinations__intro strong{display:block;font-size:14px;color:var(--mpwcfg-a-ink);margin-bottom:3px}
+.mpwcfg-combinations__intro span{display:block;font-size:12px;color:var(--mpwcfg-a-muted)}
+.mpwcfg-combo-section-title{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--mpwcfg-a-fucsia);margin:22px 0 5px}
+.mpwcfg-combo-help{font-size:12px;color:var(--mpwcfg-a-muted);margin:0 0 10px}
+.mpwcfg-combo-level{background:#fff;border:1px solid var(--mpwcfg-a-line);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.mpwcfg-combo-level__head{display:flex;align-items:center;gap:8px;padding:10px 12px;background:#fdfbfe;border-bottom:1px solid var(--mpwcfg-a-line)}
+.mpwcfg-combo-drag{color:#b7a7c2;cursor:grab}.mpwcfg-combo-number{font:600 11px ui-monospace;color:var(--mpwcfg-a-eggplant);background:#f2ebf5;border-radius:6px;padding:5px 7px}
+.mpwcfg-combo-level__label{flex:1;padding:7px 10px!important;border:1px solid var(--mpwcfg-a-line)!important;border-radius:7px!important;font-weight:600}
+.mpwcfg-combo-options{padding:10px 12px 4px}.mpwcfg-combo-option{display:grid;grid-template-columns:20px 1fr 190px 24px;align-items:center;gap:8px;margin-bottom:7px}.mpwcfg-combo-option input{width:100%;padding:7px 9px;border:1px solid var(--mpwcfg-a-line);border-radius:7px}.mpwcfg-combo-option .dashicons{color:#b7a7c2;cursor:grab}
+.mpwcfg-combo-add-option{margin:0 12px 12px}.mpwcfg-combo-matrix-wrap{overflow:auto;border:1px solid var(--mpwcfg-a-line);border-radius:10px;background:#fff}.mpwcfg-combo-matrix{width:100%;border-collapse:collapse;min-width:700px}.mpwcfg-combo-matrix th{padding:9px 10px;text-align:left;background:#f6eff9;color:var(--mpwcfg-a-muted);font-size:11px;border-bottom:1px solid var(--mpwcfg-a-line)}.mpwcfg-combo-matrix td{padding:6px 8px;border-bottom:1px solid #eee7f0}.mpwcfg-combo-matrix select,.mpwcfg-combo-matrix input[type=number]{width:100%;padding:6px 8px;border:1px solid var(--mpwcfg-a-line);border-radius:6px;background:#fff}.mpwcfg-combo-actions{display:flex;align-items:center;gap:10px;margin-top:10px}.mpwcfg-combo-actions span{font-size:11px;color:var(--mpwcfg-a-muted)}
+@media(max-width:782px){.mpwcfg-mode-switch{grid-template-columns:1fr}.mpwcfg-combinations__intro{align-items:flex-start;flex-direction:column}.mpwcfg-combo-option{grid-template-columns:20px 1fr 24px}.mpwcfg-combo-option input:nth-of-type(2){grid-column:2}.mpwcfg-combo-actions{align-items:flex-start;flex-direction:column}}
+
+/* ============================================================
+   Modo combinaciones — editor por formato
+   Mantiene una jerarquía compacta y legible, sin imponer
+   cantidades ni nombres al producto.
+   ============================================================ */
+.mpwcfg-combinations .mpwcfg-combo-profile {
+	background:#fff;
+	border:1px solid var(--mpwcfg-a-line);
+	border-radius:12px;
+	margin:0 0 14px;
+	overflow:hidden;
+}
+.mpwcfg-combinations .mpwcfg-combo-profile__head {
+	display:flex;
+	align-items:center;
+	gap:10px;
+	padding:12px 14px;
+	background:#fdfbfe;
+	border-bottom:1px solid var(--mpwcfg-a-line);
+}
+.mpwcfg-combinations .mpwcfg-combo-letter {
+	flex:0 0 26px;
+	width:26px;
+	height:26px;
+	display:inline-flex;
+	align-items:center;
+	justify-content:center;
+	border:1px solid #ddcce7;
+	border-radius:7px;
+	background:#f5eef8;
+	color:var(--mpwcfg-a-eggplant);
+	font:700 11px ui-monospace,monospace;
+}
+.mpwcfg-combinations .mpwcfg-combo-profile__head strong {
+	font-size:14px;
+	font-weight:700;
+	color:var(--mpwcfg-a-ink);
+	flex:1;
+}
+.mpwcfg-combinations .mpwcfg-combo-profile__chevron {
+	color:#8b7898;
+	font-size:13px;
+}
+.mpwcfg-combinations .mpwcfg-combo-profile__body { padding:14px; }
+.mpwcfg-combinations .mpwcfg-combo-profile__label {
+	font-size:12px;
+	font-weight:600;
+	color:var(--mpwcfg-a-muted);
+	margin:0 0 8px;
+}
+.mpwcfg-combinations .mpwcfg-combo-tier-chips {
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	gap:8px;
+	margin-bottom:14px;
+}
+.mpwcfg-combinations .mpwcfg-combo-tier-chip {
+	display:inline-flex;
+	align-items:center;
+	gap:4px;
+	padding:4px 6px 4px 10px;
+	background:#f5eef8;
+	border:1px solid #dfcfe7;
+	border-radius:999px;
+}
+.mpwcfg-combinations .mpwcfg-combo-tier-chip input {
+	width:105px;
+	border:0!important;
+	box-shadow:none!important;
+	background:transparent!important;
+	padding:3px 0!important;
+	font:500 12px ui-monospace,monospace;
+	color:var(--mpwcfg-a-ink);
+}
+.mpwcfg-combinations .mpwcfg-combo-remove-tier,
+.mpwcfg-combinations .mpwcfg-combo-remove-row {
+	border:0;
+	background:transparent;
+	color:#d82d67;
+	cursor:pointer;
+	font-size:16px;
+	line-height:1;
+	padding:2px 4px;
+}
+.mpwcfg-combinations .mpwcfg-combo-add-tier,
+.mpwcfg-combinations .mpwcfg-combo-add-row {
+	border:1px dashed #d9c7e2;
+	background:#fff;
+	color:#60427d;
+	border-radius:999px;
+	padding:6px 12px;
+	font-weight:600;
+}
+.mpwcfg-combinations .mpwcfg-combo-tier-table {
+	margin-top:12px;
+	padding-top:10px;
+	border-top:1px solid #eee7f0;
+}
+.mpwcfg-combinations .mpwcfg-combo-tier-table__title {
+	font-size:11px;
+	font-weight:700;
+	color:var(--mpwcfg-a-muted);
+	margin-bottom:6px;
+}
+.mpwcfg-combinations .mpwcfg-combo-profile-grid {
+	width:100%;
+}
+.mpwcfg-combinations .mpwcfg-combo-grid-head,
+.mpwcfg-combinations .mpwcfg-combo-grid-row {
+	display:grid;
+	grid-template-columns:minmax(150px,1fr) minmax(150px,1fr) minmax(140px,1fr) 28px;
+	gap:10px;
+	align-items:center;
+}
+.mpwcfg-combinations .mpwcfg-combo-grid-head {
+	padding:0 8px 6px;
+	color:#8c789d;
+	font-size:11px;
+	font-weight:700;
+}
+.mpwcfg-combinations .mpwcfg-combo-grid-row {
+	padding:6px 8px;
+	border-top:1px solid #eee7f0;
+}
+.mpwcfg-combinations .mpwcfg-combo-grid-row input {
+	width:100%;
+	box-sizing:border-box;
+	padding:7px 9px;
+	border:1px solid var(--mpwcfg-a-line);
+	border-radius:7px;
+	background:#f7f1f9;
+	color:var(--mpwcfg-a-ink);
+}
+.mpwcfg-combinations .mpwcfg-combo-grid-row input[readonly] {
+	font-weight:500;
+}
+.mpwcfg-combinations .mpwcfg-combo-profile__tables {
+	margin-bottom:10px;
+}
+.mpwcfg-combinations .mpwcfg-combo-profile__tables:empty:after {
+	content:'Agrega al menos una opción para comenzar.';
+	display:block;
+	padding:10px 0;
+	color:#9a89a5;
+	font-size:12px;
+}
+@media(max-width:782px){
+	.mpwcfg-combinations .mpwcfg-combo-grid-head { display:none; }
+	.mpwcfg-combinations .mpwcfg-combo-grid-row {
+		grid-template-columns:1fr 1fr;
+		padding:9px 0;
+	}
+	.mpwcfg-combinations .mpwcfg-combo-grid-row input:first-child { grid-column:1 / -1; }
+	.mpwcfg-combinations .mpwcfg-combo-grid-row .mpwcfg-combo-remove-row { grid-column:2; justify-self:end; }
+}
+
+
+/* v1.10.19 · Ajustes de backoffice solicitados. Solo UI. */
+.mpwcfg-mode-switch {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.mpwcfg-mode-switch label {
+	min-width: 0;
+	min-height: 82px;
+	box-sizing: border-box;
+}
+.mpwcfg-mode-switch span {
+	line-height: 1.25;
+}
+.mpwcfg-mode-switch small {
+	line-height: 1.35;
+}
+.mpwcfg-custom-qty-fields input[type="checkbox"] {
+	width: 18px;
+	height: 18px;
+	margin: 0;
+	accent-color: var(--mpwcfg-a-mint);
+}
+.mpwcfg-custom-qty-fields .mpwcfg-check {
+	gap: 9px;
+	align-items: center;
+}
+.mpwcfg-custom-qty-fields .mpwcfg-field {
+	margin-bottom: 10px;
+}
+.mpwcfg-trust-input {
+	box-sizing: border-box;
+}
+
+
+/* Evita que el bloque de cantidad personalizada se monte sobre "Mostrar como". */
+.mpwcfg-panel .mpwcfg-field--display {
+	position: relative;
+	display: block;
+	width: 100%;
+	clear: both;
+	margin: 0 0 12px;
+}
+.mpwcfg-panel .mpwcfg-field--display select {
+	display: block;
+	width: 220px;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+.mpwcfg-panel .mpwcfg-custom-qty-fields {
+	position: relative;
+	display: block;
+	clear: both;
+	width: 100%;
+	box-sizing: border-box;
+	margin: 0 0 14px;
+}
+.mpwcfg-panel .mpwcfg-custom-qty-fields .mpwcfg-field:first-child {
+	margin-top: 0;
+}
+.mpwcfg-panel .mpwcfg-custom-qty-fields .mpwcfg-check {
+	display: inline-flex;
+	align-items: flex-start;
+	gap: 9px;
+	line-height: 1.35;
+}
+.mpwcfg-panel .mpwcfg-custom-qty-fields .mpwcfg-check input[type="checkbox"] {
+	flex: 0 0 auto;
+	width: 18px;
+	height: 18px;
+	margin: 0;
+}
+.mpwcfg-panel .mpwcfg-custom-qty-fields .mpwcfg-check span {
+	display: block;
+}
+
+/* v1.10.23 · Corrección final del selector de modo. Solo UI. */
+.mpwcfg-panel .mpwcfg-mode-switch {
+	display: flex !important;
+	align-items: stretch !important;
+	justify-content: flex-start !important;
+	gap: 12px !important;
+	width: auto !important;
+	margin: 14px 12px 8px 300px !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+}
+.mpwcfg-panel .mpwcfg-mode-switch label {
+	flex: 0 0 190px !important;
+	width: 190px !important;
+	max-width: 190px !important;
+	min-width: 190px !important;
+	min-height: 82px !important;
+	box-sizing: border-box !important;
+	margin: 0 !important;
+}
+@media (max-width: 1100px) {
+	.mpwcfg-panel .mpwcfg-mode-switch {
+		margin-left: 12px !important;
+	}
+	.mpwcfg-panel .mpwcfg-mode-switch label {
+		flex-basis: 180px !important;
+		width: 180px !important;
+		max-width: 180px !important;
+		min-width: 180px !important;
+	}
+}
+
+/* v1.10.24 · Selector de modo al 50% / 50%. Solo UI. */
+.mpwcfg-panel .mpwcfg-mode-switch {
+	display: grid !important;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+	align-items: stretch !important;
+	gap: 12px !important;
+	width: 100% !important;
+	margin: 14px 0 8px !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+}
+.mpwcfg-panel .mpwcfg-mode-switch label {
+	width: 100% !important;
+	max-width: none !important;
+	min-width: 0 !important;
+	flex: none !important;
+	box-sizing: border-box !important;
+	margin: 0 !important;
+}
+@media (max-width: 782px) {
+	.mpwcfg-panel .mpwcfg-mode-switch {
+		grid-template-columns: 1fr !important;
+	}
+}
+
+/* v1.10.25 — ajuste visual de espaciado y alineación interna.
+ * Solo CSS: no modifica estructura, datos ni funcionalidad.
+ */
+.mpwcfg-panel .mpwcfg-mode-switch {
+	box-sizing: border-box;
+	padding: 0 12px;
+	margin-left: 0;
+	margin-right: 0;
+}
+.mpwcfg-panel .mpwcfg-mode-switch label {
+	box-sizing: border-box;
+	min-width: 0;
+	padding: 16px 18px;
+}
+.mpwcfg-panel .mpwcfg-grid2 > .mpwcfg-field {
+	min-width: 0;
+}
+.mpwcfg-panel .mpwcfg-grid2 > .mpwcfg-field input,
+.mpwcfg-panel .mpwcfg-grid2 > .mpwcfg-field textarea,
+.mpwcfg-panel .mpwcfg-subgroup input,
+.mpwcfg-panel .mpwcfg-subgroup textarea {
+	box-sizing: border-box;
+	max-width: 100%;
+}
+.mpwcfg-panel .mpwcfg-globals > .mpwcfg-field:not(:first-child) {
+	width: calc(50% - 6px);
+}
+.mpwcfg-panel .mpwcfg-globals > .mpwcfg-subgroup {
+	box-sizing: border-box;
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+}
+@media (max-width: 782px) {
+	.mpwcfg-panel .mpwcfg-globals > .mpwcfg-field:not(:first-child) {
+		width: 100%;
+	}
+}
+
+
+/* v1.10.27 — corrige el ancho heredado de WooCommerce
+ * solo en los campos propios de Configurator Machine.
+ * No afecta los labels del constructor de combinaciones.
+ */
+.mpwcfg-panel label.mpwcfg-field {
+	width: auto !important;
+	float: none !important;
+}
+.mpwcfg-panel .mpwcfg-subgroup > legend {
+	width: auto !important;
+	float: none !important;
+}
+
+/* v1.10.29 — evita que el texto de cantidad personalizada se salga del foco. */
+.mpwcfg-panel .mpwcfg-custom-qty-fields .mpwcfg-check {
+	width: auto !important;
+	max-width: 100% !important;
+	min-width: 0 !important;
+	float: none !important;
+	box-sizing: border-box;
+	white-space: normal !important;
+}
+.mpwcfg-panel .mpwcfg-custom-qty-fields .mpwcfg-check span {
+	min-width: 0;
+	max-width: 100%;
+	white-space: normal !important;
+	overflow-wrap: anywhere;
+}
+
+/* v1.10.31 — espaciado solicitado. Solo UI del plugin. */
+.mpwcfg-panel .mpwcfg-mode-switch { padding: 5px !important; }
+.mpwcfg-panel .mpwcfg-field { padding: 5px !important; }
+.mpwcfg-panel .mpwcfg-subgroup > legend { padding: 10px 0 !important; }
+.mpwcfg-panel .mpwcfg-globals > .mpwcfg-subgroup { padding: 10px !important; }
+.mpwcfg-panel .mpwcfg-step__body { padding: 10px !important; }
+
+/* v1.10.32 — el alto de los subgrupos se ajusta al contenido. */
+.mpwcfg-panel .mpwcfg-subgroup {
+	height: auto !important;
+	min-height: 0 !important;
+	box-sizing: border-box;
+}
+
+/* v1.10.34 — ajustes de espaciado solicitados. Solo UI. */
+.mpwcfg-panel .mpwcfg-globals { padding: 10px !important; }
+.mpwcfg-mode-panel__title { padding: 10px !important; }
+.mpwcfg-panel .mpwcfg-step__body { padding: 10px !important; }
+.mpwcfg-panel .mpwcfg-step__display { margin-bottom: 20px !important; }
+.mpwcfg-panel .mpwcfg-field--display select { margin-bottom: 20px !important; }
+.mpwcfg-panel .mpwcfg-mode-switch { padding: 10px !important; }
