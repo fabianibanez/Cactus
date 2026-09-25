@@ -1,5 +1,9 @@
 # MPW - Configurador de productos
 
+<p align="center">
+  <img src="assets/screen.png" alt="MPW - Configurador de productos" width="100%">
+</p>
+
 Plugin para WordPress + Elementor + WooCommerce que permite crear experiencias de configuración de productos directamente sobre WooCommerce.
 
 ## Descripción
