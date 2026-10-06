@@ -1,8 +1,5 @@
 # MPW - Configurador de productos
 
-
-https://youtu.be/6yQTOh5XBYY
-
 <a href="https://youtu.be/6yQTOh5XBYY">
   <img src="https://img.youtube.com/vi/6yQTOh5XBYY/maxresdefault.jpg" alt="Ver demo en YouTube" width="800">
 </a>
